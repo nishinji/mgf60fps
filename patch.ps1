@@ -81,6 +81,15 @@ if ($FileHash.Hash -eq "7A88C431078FF1F469ED83C0B5ABB1B4") {
     $patched = 1
 }
 
+if ($FileHash.Hash -eq "2B9A7176C6AA0E26D0CE3AFE505E7451")
+{
+    $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
+    Write-Output "Patching Assassin's Creed III Lady Liberty JP"
+    $bytes[0xEBC2] = 0x1
+    [System.IO.File]::WriteAllBytes("output/eboot.bin", $bytes)
+    $patched = 1
+}
+
 if ($patched) {
     Write-Output "Done. output\eboot.bin"
 }
