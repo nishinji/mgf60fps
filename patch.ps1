@@ -15,6 +15,7 @@ if ( -Not(Test-Path "output")) {
 [bool] $patched = 0
 
 # Diva X 60fps patch by someone idk who
+#PCSH00176
 if ($FileHash.Hash -eq "733033E2DDF86D94FCA30B2AA1249302")
 {
     $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
@@ -28,6 +29,7 @@ if ($FileHash.Hash -eq "733033E2DDF86D94FCA30B2AA1249302")
 }
 
 # Diva X 60fps patch reference the patch above
+#PCSG00683
 if ($FileHash.Hash -eq "04A530196C722D1A475082C57D85CFD7")
 {
     $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
@@ -38,6 +40,7 @@ if ($FileHash.Hash -eq "04A530196C722D1A475082C57D85CFD7")
     $patched = 1
 }
 
+#PCSG00610
 if ($FileHash.Hash -eq "9E50BD28879FC721AB724E97141F9D8A") {
     $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
     Write-Output "Patching 60fps Miracle Girls Festival"
@@ -49,6 +52,7 @@ if ($FileHash.Hash -eq "9E50BD28879FC721AB724E97141F9D8A") {
     $patched = 1
 }
 
+#PCSE00326
 if ($FileHash.Hash -eq "3727CEE0C28313B961634C15B3F7EA33") {
     $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
     Write-Output "Patching 60fps Diva f US"
@@ -62,6 +66,7 @@ if ($FileHash.Hash -eq "3727CEE0C28313B961634C15B3F7EA33") {
     $patched = 1
 }
 
+#PCSG00074
 if ($FileHash.Hash -eq "94AA36566BACEA2DC53ACA96920B3EC3") {
     $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
     Write-Output "Patching 60fps Diva f JP"
@@ -72,6 +77,7 @@ if ($FileHash.Hash -eq "94AA36566BACEA2DC53ACA96920B3EC3") {
     $patched = 1
 }
 
+#PCSG00205
 if ($FileHash.Hash -eq "7A88C431078FF1F469ED83C0B5ABB1B4") {
     $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
     Write-Output "Patching 60fps Diva F 2nd JP"
@@ -81,6 +87,7 @@ if ($FileHash.Hash -eq "7A88C431078FF1F469ED83C0B5ABB1B4") {
     $patched = 1
 }
 
+#PCSG00116
 if ($FileHash.Hash -eq "2B9A7176C6AA0E26D0CE3AFE505E7451")
 {
     $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
