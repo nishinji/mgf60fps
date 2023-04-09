@@ -97,6 +97,29 @@ if ($FileHash.Hash -eq "2B9A7176C6AA0E26D0CE3AFE505E7451")
     $patched = 1
 }
 
+#PCSG00783
+if ($FileHash.Hash -eq "174E6FB6B526C9E510B39980BBD6CCAC")
+{
+    $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
+    Write-Output "Patching Project Root JP"
+    $bytes[0x1186BC] = 0x1
+    [System.IO.File]::WriteAllBytes("output/eboot.bin", $bytes)
+    $patched = 1
+}
+
+<# not work, comment out
+#PCSC00006
+if ($FileHash.Hash -eq "7B1218320937AF70FA97562DE08E5DFC")
+{
+    $bytes = [System.IO.File]::ReadAllBytes("eboot.bin")
+    Write-Output "WipEout 2048"
+    $bytes[0x2F7D0A] = 0xFCF022E8 12E0
+    $bytes[0x2F7D4A] = 0x8042
+    [System.IO.File]::WriteAllBytes("output/eboot.bin", $bytes)
+    $patched = 1
+}
+#>
+
 if ($patched) {
     Write-Output "Done. output\eboot.bin"
 }
